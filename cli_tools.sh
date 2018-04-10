@@ -43,4 +43,24 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 # install with a stable Ruby
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 
+# now, you'll need to run source $HOME/.rvm/scripts/rvm to get RVM working
+source $HOME/.rvm/scripts/rvm
 
+# some basic usage of rvm include:
+# rvm install 2.3.3
+# rvm use 2.3.3 --default
+# rvm list
+
+# now, let's update gem
+gem update --system
+
+# install important Ruby gems
+gem install phantomjs
+gem install pg
+gem install sqlite3
+gem install bundler
+gem install rails
+gem install pry
+gem install nokogiri
+gem install learn-co    # this is not necessary for most
+gem install rspec
