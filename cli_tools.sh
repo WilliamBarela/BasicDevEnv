@@ -3,14 +3,14 @@ sudo groupadd npm
 sudo usermod -a -G npm,staff $USER
 
 # update ubuntu packages
-apt-get update
-apt-get upgrade
+sudo apt-get update
+sudo apt-get upgrade
 
 # essential packages with simple install
-apt-get -y install curl postgresql libpq-dev default-jre build-essential libssl-dev phantom.js
+sudo apt-get -y install curl postgresql libpq-dev default-jre build-essential libssl-dev phantomjs
 
 # essential CLI tools and version control
-apt-get install -y vim-athena git tree tmux openssh-server
+sudo apt-get install -y vim-athena tree tmux openssh-server
 
 # download the .dotfiles
 cd $HOME 
@@ -23,7 +23,7 @@ bash .dotfiles/first_run_dotfiles.sh
 # This is a good basic tutorial for installation and usage: 
 # https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
 mkdir $HOME/tmp
-curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh -o $HOME/tmp/install_nvm.sh
+curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.9/install.sh -o $HOME/tmp/install_nvm.sh
 # the last step is going to change your ~/.bashrc or ~/.profile, let's back them up
 cp $HOME/.bashrc $HOME/.bashrc.bak
 cp $HOME/.profile $HOME/.profile.bak
@@ -53,6 +53,9 @@ source $HOME/.rvm/scripts/rvm
 
 # now, let's update gem
 gem update --system
+
+# if when you install gems you don't want all of the documentation downloaded as well, do this:
+echo "gem: --no-ri --no-rdoc" > $HOME/.gemrc
 
 # install important Ruby gems
 gem install phantomjs
