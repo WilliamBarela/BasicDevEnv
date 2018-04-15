@@ -1,6 +1,6 @@
-# set basic permissions and groups for npm:
-npm groupadd npm
-usermod -a -G npm,staff $USER
+# set basic permissions and groups for npm
+sudo groupadd npm
+sudo usermod -a -G npm,staff $USER
 
 # update ubuntu packages
 apt-get update
